@@ -1,0 +1,107 @@
+.body-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+}
+
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: top 500ms;
+    width: 90vw;
+    max-width: 650px;
+}
+
+.search-form input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid #ccc;
+    border-radius: 25px 0 0 25px;
+    outline: none;
+    float: left;
+    width: 80%;
+    background: #fff;
+}
+
+.search-form button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid #ccc;
+    border-radius: 0 25px 25px 0;
+    border-left: none;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background: #0b7dda;
+}
+
+.search-form::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.results-container {
+    position: absolute;
+    top: 8rem;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.playlist {
+    position: relative;
+    margin-right: 2rem;
+}
+
+@media screen and (max-width: 800px) {
+    .results-container {
+        display: block;
+    }
+
+    .playlist {
+        margin-right: 0;
+    }
+}
+
+.add-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #baf73c;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.add-button:hover {
+    transform: scale(1.2);
+}
+
+.add-button.added:hover {
+    transform: scale(1.2) rotate(45deg);
+}
+
+.add-button.added {
+    color: red;
+    transform: rotate(45deg);
+}

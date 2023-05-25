@@ -1,0 +1,153 @@
+/* Navbar */
+.navbar {
+    display: grid;
+    grid-template-rows: auto;
+    
+    grid-template-areas: "logo . menus";
+    background-color: #2692b7;
+    color: #FFFFFF;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Add shadow */
+    border-radius: 4px;
+    /* Add rounded corners */
+}
+
+* {
+    box-sizing: border-box;
+  }
+
+.logo {
+    grid-area: logo;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+/* Hamburger menu */
+.hamburger-menu {
+    display: none;
+    /* Hide by default */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    cursor: pointer;
+    margin-top: 5px;
+    grid-area: menus;
+    justify-self: end;
+}
+
+.bar {
+    width: 100%;
+    height: 3px;
+    background-color: #FFFFFF;
+}
+
+.menus {
+    grid-area: menus;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.menus li {
+    margin-left: 20px;
+    padding: 5px 10px;
+    /* Add padding for hover effect */
+    border-radius: 4px;
+    /* Add rounded corners */
+}
+
+.menus a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.menus li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Add subtle hover effect */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f1f1f1;
+}
+
+/* Backdrop */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    /* Make it invisible to clicks */
+    transition: opacity 0.3s ease;
+    z-index: 900;
+}
+
+/* Navigation drawer */
+.navigation-drawer {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    /* Hide by default */
+    width: 250px;
+    height: 100%;
+    background-color: #2692b7;
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.drawer-menus {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.drawer-menus a {
+    display: block;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.drawer-menus a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .menus {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    /* Show navigation drawer when open */
+    .navigation-drawer.open {
+        left: 0;
+    }
+
+    /* Show backdrop when navigation drawer is open */
+    .backdrop.visible {
+        opacity: 1;
+        pointer-events: auto;
+        /* Make it visible to clicks */
+    }
+}
+
+.user-nav {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+  }
