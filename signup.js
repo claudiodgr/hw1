@@ -5,8 +5,6 @@ async function validate(event) {
     const passwordConfirmVal = formElements["password_confirm"].value;
 
     for (let control of formElements) {
-        if (control.name == 'image_url') continue;
-        if (control.name == 'file_upload' && control.value == '' && formElements['image_url'].value != '') continue;
         if (control.name == 'password' && control.value.length < 8) {
             event.preventDefault();
             control.setCustomValidity("La password deve essere lunga almeno 8 caratteri");

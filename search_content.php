@@ -113,7 +113,7 @@ if (isset($_GET["playlistId"]) && isset($_SESSION['username'])) {
     <meta charset="UTF-8">
     <meta content="Crea Post" name="description">
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-    <title>Crea Post</title>
+    <title>Search</title>
     <link rel="icon" href="favicon.png" sizes="64x64" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">

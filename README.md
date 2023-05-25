@@ -8,4 +8,6 @@ La pagina “Contacts” permette di cercare e seguire gli utenti della piattafo
 La pagina “My Library” infine mostra le playlist aggiunte ai preferiti e quelle a cui si è posto like.
 L’accesso al sito e la fruizione dei contenuti può avvenire previa registrazione dell’utente precedentemente, o, se si è già iscritti, accendendo al sito tramite l’apposita pagina di login.
 
+NOTA: da creare il database su phpmyadmin chiamato "hw1"
+
 Distinti Saluti

@@ -93,16 +93,18 @@ if (isset($_POST["nome"])) {
             $respCode .= " Lunghezza password invalida. Inserire almeno 8 caratteri";
             break;
         }
-        $image_url = mysqli_real_escape_string($conn, $_POST["image_url"]);
         $password = hash("sha256", $password);
         if (empty($nome) || empty($password) || empty($email) || empty($username)) {
             $respCode .= " Campi Invalidi";
             break;
         }
 
-        if (empty($image_url) && !empty($_POST['file_upload']) && file_exists("./uploads/{$_POST['file_upload']}")) {
+        if (!empty($_POST['file_upload']) && file_exists("./uploads/{$_POST['file_upload']}")) {
             $im_url = mysqli_escape_string($conn, $_POST['file_upload']);
             $image_url = "http://localhost/uploads/{$im_url}";
+        }
+        else {
+            $image_url = "http://localhost/uploads/blank-profile-picture.png";
         }
 
         if (empty($image_url)) {
@@ -120,6 +122,7 @@ if (isset($_POST["nome"])) {
             $_SESSION["userid"] = $password;
             $_SESSION['UID'] = $possibleID;
             $_SESSION['username'] = $username;
+            $_SESSION['image'] = $image_url;
             header("Location: {$uri}/../home.php");
             exit();
         }
@@ -182,15 +185,9 @@ if (isset($_POST["nome"])) {
             <input id="password_confirm" name="password_confirm" class="post" type="password">
             <span id="password_confirm-error" class="error" aria-live="polite"></span>
         </div>
-        <div>
-            <label for="image_url">Image URL:</label>
-            <input type="url" name="image_url" id="image_url" aria-describedby="optionality">
-            <small id="optionality">Optional if you want to choose an image from your computer</small>
-        </div>
-
         <div id="image_chooser">
             <div>
-                <label for="file_upload" id="label_image">Choose an image (optional if you've chosen an image URL)</label>
+                <label for="file_upload" id="label_image">Choose an image (optional)</label>
                 <input type="file" id="file_upload" name="file_upload" accept="image/*">
             </div>
             <div class="prev">
