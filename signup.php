@@ -101,10 +101,10 @@ if (isset($_POST["nome"])) {
 
         if (!empty($_POST['file_upload']) && file_exists("./uploads/{$_POST['file_upload']}")) {
             $im_url = mysqli_escape_string($conn, $_POST['file_upload']);
-            $image_url = "http://localhost/uploads/{$im_url}";
+            $image_url = "./uploads/{$im_url}";
         }
         else {
-            $image_url = "http://localhost/uploads/blank-profile-picture.png";
+            $image_url = "./uploads/blank-profile-picture.png";
         }
 
         if (empty($image_url)) {

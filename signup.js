@@ -13,7 +13,7 @@ async function validate(event) {
             control.setCustomValidity("");
         }
 
-        if (control.value === "") {
+        if (control.value === "" && control.id !== "file_upload") {
             alert("Inserire tutti i campi");
             event.preventDefault();
             return;
