@@ -12,4 +12,6 @@ NOTA: da creare il database su phpmyadmin chiamato "hw1"
 
 NOTA2: la cartella "uploads" deve avere i permessi di scrittura (per caricare immagini)
 
+NOTA3: Ho creato un account di test per visualizzare meglio le funzionalità del sito, una volta aggiunto ai propri contatti. Username: "Test"; Password: "provaprova".
+
 Distinti Saluti

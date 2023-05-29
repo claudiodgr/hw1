@@ -34,3 +34,14 @@ CREATE TABLE hw1_follow (
     FOREIGN KEY (followerId) REFERENCES hw1_users (id) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (followed) REFERENCES hw1_users (id) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+
+
+INSERT INTO `hw1_users` (`id`, `nome`, `cognome`, `email`, `password`, `image`, `username`) VALUES
+(1, 'test', 'test', 'test@test.it', '698cd7528570ea0c92741af736b6595e6704ef4eb26f787fc817287fb3e291d0', './uploads/blank-profile-picture.png', 'test');
+
+INSERT INTO `hw1_playlists` (`id`, `playlistDeezerId`, `playlistUser`, `date`) VALUES
+(1, '10155899262', 1, '2023-05-29 18:10:43'),
+(2, '3748937686', 1, '2023-05-29 18:10:45'),
+(3, '848874001', 1, '2023-05-29 18:10:55'),
+(4, '7615945482', 1, '2023-05-29 18:11:13');
