@@ -10,4 +10,6 @@ L’accesso al sito e la fruizione dei contenuti può avvenire previa registrazi
 
 NOTA: da creare il database su phpmyadmin chiamato "hw1"
 
+NOTA2: la cartella "uploads" deve avere i permessi di scrittura (per caricare immagini)
+
 Distinti Saluti
